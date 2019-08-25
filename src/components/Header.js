@@ -1,14 +1,15 @@
 import React from 'react';
+import SearchBarButton from './SearchBarButton';
+import { Link } from '@reach/router';
 
 const Header = () => {
   return (
     <div>
-      <h1>NC News</h1>
+      <Link to={'/'}>
+        <h1>NC News</h1>
+      </Link>
       <nav className="navbar">
-        <form className="searchbar">
-          <input type="text" placeholder="Search..." name="Search" />
-          <button type="submit">Search</button>
-        </form>
+        <SearchBarButton />
       </nav>
     </div>
   );

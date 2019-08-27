@@ -5,8 +5,9 @@ import Home from './components/Home';
 import { Router } from '@reach/router';
 import ArticlesList from './components/ArticlesList';
 import Article from './components/Article';
-import Topics from './components/Topics';
+import Topics from './components/TopicsList';
 import SelectBox from './components/select-box/SelectBox';
+import { Comments } from './Comments';
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
       <Router>
         <Home path="/" />
         <Topics path="/topics/" />
-        <ArticlesList path="/topics/:topic_slug/articles/" />
-        <ArticlesList path="/articles/" />
+        <ArticlesList path="/topics/:topic_slug/articles" />
+        <ArticlesList path="/articles" />
         <Article path="/articles/:article_id" />
+        <Comments path="/articles/:article_id/comments" />
       </Router>
     </div>
   );

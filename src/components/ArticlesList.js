@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getData } from './Api';
 import { Link, Router } from '@reach/router';
 import Article from './Article';
+import SortButtons from './SortButtons';
 
 class ArticlesList extends Component {
   state = {
@@ -16,26 +17,24 @@ class ArticlesList extends Component {
     if (articles) {
       return (
         <div>
+          <SortButtons fetchArticles={this.fetchArticles} />
           <title>Articles</title>
-
-          <ul className="articlesList">
-            {articles.map(article => ( 
-              <Link
-                to={`/articles/${article.article_id}`}
-                key={article.article_id}
-              >
-                <li>{article.title} </li>
-              </Link>
-            ))}
-          </ul>
+          {articles.map(article => (
+            <Link
+              to={`/articles/${article.article_id}`}
+              key={article.article_id}
+            >
+              <li>{article.title} </li>
+            </Link>
+          ))}
           <Router>
             <Article path="/:article_id" />
           </Router>
-    
         </div>
       );
     }
   }
+
   componentDidMount = () => {
     this.fetchArticles();
   };
@@ -43,12 +42,11 @@ class ArticlesList extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     if (prevProps.uri !== this.props.uri) this.fetchArticles();
   };
-  fetchArticles = () => {
-    // console.log(this.props, '!!!!!');
+  fetchArticles = (sort) => {
+    console.log(sort)
     const { topic_slug } = this.props;
     getData(topic_slug).then(articles => {
-        console.log(articles, '111111');
-        this.setState({ articles, isLoading: false });
+      this.setState({ articles, isLoading: false });
     });
   };
 }

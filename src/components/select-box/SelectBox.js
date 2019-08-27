@@ -42,7 +42,7 @@ class SelectBox extends Component {
                     <div
                       key={item.id}
                       onClick={() => this.selectItem(item)}
-                      className={selectedItem === item ? 'seleted' : ''}
+                      className={selectedItem === item ? 'selected' : ''}
                     >
                       {item.value}
                     </div>

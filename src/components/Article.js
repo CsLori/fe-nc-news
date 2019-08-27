@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { getData } from './Api';
 import { getSingleArticle } from './Api';
 import { Link } from '@reach/router';
 import ArticleHeader from './ArticleHeader';
@@ -7,12 +6,17 @@ import ArticleHeader from './ArticleHeader';
 class Article extends Component {
   state = {
     isLoading: true,
-    article: null
+    article: null,
+    error: null
   };
   render() {
-    const { isLoading, article } = this.state;
+    const { article_id } = this.props;
+    console.log(article_id, 'article');
+    const { isLoading, article, error } = this.state;
     // console.log(article.topic, 'slug');
     if (isLoading) return <p>Loading...</p>;
+    if (error) return <p>Ooops...</p>;
+
     return (
       <>
         <ArticleHeader />
@@ -24,7 +28,9 @@ class Article extends Component {
           <p>Article: {article.body}</p>
           <p>Date: {article.created_at}</p>
           <p>Author: {article.username}</p>
-          <p>Comments: {article.comment_count}</p>
+          <Link to={`/articles/${article.article_id}/comments`}>
+            <p>Comments: {article.comment_count}</p>
+          </Link>
           <p>Votes: {article.votes}</p>
         </div>
       </>
@@ -35,7 +41,6 @@ class Article extends Component {
   };
   fetchArticle = () => {
     const { article_id } = this.props;
-    // console.log(article_id);
     getSingleArticle(article_id).then(article => {
       this.setState({ article, isLoading: false });
     });

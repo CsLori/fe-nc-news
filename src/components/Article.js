@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { getSingleArticle } from './Api';
 import { Link } from '@reach/router';
 import ArticleHeader from './ArticleHeader';
+import PostComment from './PostComment';
+import { deleteArticle } from './Api';
+import Vote from './Vote';
+import './Article.css';
 
 class Article extends Component {
   state = {
@@ -10,28 +14,46 @@ class Article extends Component {
     error: null
   };
   render() {
-    const { article_id } = this.props;
-    console.log(article_id, 'article');
     const { isLoading, article, error } = this.state;
-    // console.log(article.topic, 'slug');
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Ooops...</p>;
-
+    const { isLoggedIn } = this.props;
     return (
       <>
         <ArticleHeader />
         <div className="article">
-          <Link to={`/topics/${article.topic}/articles`}>
-            <p>{article.topic}</p>
-          </Link>
-          <p>{article.title}</p>
-          <p>Article: {article.body}</p>
-          <p>Date: {article.created_at}</p>
-          <p>Author: {article.username}</p>
-          <Link to={`/articles/${article.article_id}/comments`}>
-            <p>Comments: {article.comment_count}</p>
-          </Link>
-          <p>Votes: {article.votes}</p>
+          <div className="articleTop">
+            <Link to={`/topics/${article.topic}/articles`}>
+              <p>{article.topic}</p>
+            </Link>
+            <Link to={`/articles/${article.article_id}/comments`}>
+              <p className="comments">Comments: {article.comment_count}</p>
+            </Link>
+          </div>
+          <h2 className="articleTitle">{article.title}</h2>
+          <em>
+            <p className="articleBody">{article.body}</p>
+          </em>
+          {article.author === isLoggedIn && (
+            <button
+              id="deleteButton"
+              onClick={() => this.removeArticle(article.article_id)}
+            >
+              Delete article
+            </button>
+          )}
+          <div className="articlePost">
+            <PostComment article_id={this.props.article_id} />
+          </div>
+          <div className="articleBottom">
+            <div>
+              <p className="author">Author: {article.username}</p> <br />
+              <p className="date">Date: {article.created_at}</p> <br />
+            </div>
+          </div>
+          <div>
+            <Vote article_id={article.article_id} votes={article.votes} />
+          </div>
         </div>
       </>
     );
@@ -44,6 +66,10 @@ class Article extends Component {
     getSingleArticle(article_id).then(article => {
       this.setState({ article, isLoading: false });
     });
+  };
+
+  removeArticle = article_id => {
+    deleteArticle(article_id);
   };
 }
 

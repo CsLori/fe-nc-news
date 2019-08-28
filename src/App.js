@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -6,31 +6,29 @@ import { Router } from '@reach/router';
 import ArticlesList from './components/ArticlesList';
 import Article from './components/Article';
 import Topics from './components/TopicsList';
-import SelectBox from './components/select-box/SelectBox';
-import { Comments } from './Comments';
+import { Comments } from './components/Comments';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <SelectBox
-        width={200}
-        items={[
-          { value: 'coding', id: 1 },
-          { value: 'cooking', id: 2 },
-          { value: 'football', id: 3 }
-        ]}
-      />
-      <Router>
-        <Home path="/" />
-        <Topics path="/topics/" />
-        <ArticlesList path="/topics/:topic_slug/articles" />
-        <ArticlesList path="/articles" />
-        <Article path="/articles/:article_id" />
-        <Comments path="/articles/:article_id/comments" />
-      </Router>
-    </div>
-  );
+class App extends Component {
+  state = {
+    isLoggedIn: 'happyamy2016'
+  };
+  render() {
+    const { isLoggedIn } = this.state;
+    return (
+      <div className="App">
+        <Header />
+
+        <Router>
+          <Home path="/" />
+          <Topics path="/topics/" />
+          <ArticlesList path="/topics/:topic_slug/articles" />
+          <ArticlesList path="/articles" />
+          <Article path="/articles/:article_id" isLoggedIn={isLoggedIn}/>
+          <Comments path="/articles/:article_id/comments" isLoggedIn={isLoggedIn}/>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,76 +1,189 @@
-@media only screen and (max-width: 414px) {
-}
-
-.App {
-  text-align: center;
-}
-
-body {
-  background-image: linear-gradient(
-    120deg,
-    #d4fc79 0%,
-    #96e6a1 100%
-  ); /* background-color: sandybrown; */
-}
-
-.navbar {
-  border-bottom: 3px solid black;
-}
-
-.searchbar {
-  display: block;
-}
-
-.articlesList {
-  display: inline;
-  text-decoration: none;
-  margin: 10px;
-  padding: 0;
-}
-.article {
-  /* width: 100%; */
-  display: block;
-  justify-content: center;
-  -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
-  box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
-  background-color: rgb(157, 168, 140);
-}
-
 @media only screen and (max-width: 768px) {
-}
+   *{
+    margin: 0;
+    padding: 0;
+  }
 
-.App {
-  text-align: center;
-}
+  .App {
+    text-align: center;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+    background-color: black;
+    width: 100%;
+    border: 2px solid red;
+  }
+  .loggedIn {
+    color: white;
+  }
+  .sort {
+    margin-top: 10px;
+  }
+  /*body {
+    background-color: blanchedalmond;
+  }
+  .title {
+    color: white;
+  }
+  .n {
+    color: red;
+  }*/
 
-body {
-  background-image: linear-gradient(
-    120deg,
-    #d4fc79 0%,
-    #96e6a1 100%
-  ); /* background-color: sandybrown; */
-}
+  /* .article {
+    display: grid;
+    border: 2px solid pink;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    background-color: rgb(157, 168, 140);
+  }*/
+  /* .articlesList li {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
 
-.navbar {
-  border-bottom: 3px solid black;
-}
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 
-.searchbar {
-  display: block;
+    grid-template-areas:
+      'author votes'
+      'date comments';
+    margin: 20px auto 0;
+    width: 100%;
+    height: 5;
+    color: black;
+    padding: 0px;
+  } */
 }
+/* border: 2px solid red;
+    background-color: white; */
+/* text-decoration: none;
+  } */
 
-.articlesList {
-  display: inline;
-  text-decoration: none;
-  margin: 10px;
-  padding: 0;
-}
-.article {
-  display: inline-block;
-  /* padding-top: 200px; */
-  width: 100%;
-  align-items: center;
-  -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
-  box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
-  background-color: rgb(157, 168, 140);
-}
+/* .votes {
+    grid-area: comments;
+  } */
+
+/* .foodImg {
+    height: 250px;
+    width: 200px;
+  } */
+/* .articleAuthor {
+
+  } */
+/* .articleBottom {
+    display: grid;
+    border: 4px solid orange;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'date votes'
+      'author comments';
+  }
+  .date {
+    border: 3px solid orange;
+    grid-area: date;
+  }
+  .votes {
+    grid-area: votes;
+  }
+  .author {
+    grid-area: author;
+  }
+  .comments {
+    grid-area: comments;
+  }*/
+
+/* @media only screen and (max-width: 1920px) {
+  * {
+    margin: 10;
+    padding: 0;
+  }
+
+  .App {
+    text-align: center;
+  }
+
+  body {
+    background-color: blanchedalmond;
+  }
+
+  .title {
+    color: white;
+    float: left;
+  }
+  .n {
+    color: red;
+  }
+  .articleHeader {
+    color: black;
+  }
+
+  header {
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+    border: 2px solid red;
+  }
+
+  .comments {
+    float: right;
+  }
+  .votes {
+    float: left;
+  }
+  .author {
+    float: left;
+  }
+  .date {
+    float: left;
+  }
+  .searchbar {
+    float: right;
+  }
+  .articlePost {
+    border: 2px solid blue;
+  }
+  .articleBottom {
+    border: 3px solid red;
+    width: 100%;
+    display: inline-block;
+  }
+  .articlesList li {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+    background-color: lightgray;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-area:
+      'articleTitle'
+      'articleAuthor';
+    margin: 20px auto 0;
+    width: 70%;
+    height: 5;
+    color: black;
+    padding: 0px;
+
+   
+    text-decoration: none;
+  }
+  .article {
+    display: inline-block;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    background-color: rgb(157, 168, 140);
+  }
+} */

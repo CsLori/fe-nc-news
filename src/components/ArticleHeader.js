@@ -4,7 +4,7 @@ import React from 'react';
 const ArticleHeader = () => {
   return (
     <div>
-      <h2>This is my article</h2>
+      <h2 className="articleHeader">Articles</h2>
       <nav className="navbar" />
     </div>
   );

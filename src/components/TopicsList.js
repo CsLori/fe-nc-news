@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { getTopics } from './Api';
 import { Link } from '@reach/router';
 
-
 export default class Topics extends Component {
   state = {
     topics: null,
@@ -17,6 +16,7 @@ export default class Topics extends Component {
       return (
         <>
           <div>
+            <h1>Topics</h1>
             <ol className="topics">
               {topics.map(topic => (
                 <Link to={`/topics/${topic.slug}/articles`} key={topic.slug}>
@@ -37,10 +37,5 @@ export default class Topics extends Component {
       this.setState({ topics, isLoading: false });
     });
   };
-  //   handleChange = e => {
-  //     this.setState({ value: e.target.value });
-  //   };
-  //   handleSubmit(e) {
-  //     e.preventDefault();
-  //   }
+
 }

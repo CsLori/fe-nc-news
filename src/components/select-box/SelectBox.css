@@ -2,14 +2,20 @@
   box-sizing: border-box;
 }
 
+.fullDropDown {
+  border: 3px solid white;
+  margin-top: 44px;
+  margin-right: -32px;
+  float: right;
+}
+
 .select-box--box {
+  border: 2px solid red;
   position: absolute;
-  left: 0;
 }
 
 .select-box--container {
   display: grid;
-
   background-color: whitesmoke;
   height: 30px;
   border: 1px solid #aaa;
@@ -19,6 +25,7 @@
 }
 
 .select-box--selected-item {
+  border: 2px solid blue;
   display: inline-block;
   height: 100%;
   width: 100;
@@ -28,6 +35,7 @@
 
 .select-box--items div {
   background-color: whitesmoke;
+  border: 2px solid pink;
 
   border-bottom: 1 px solid #ddd;
   border-left: 1 px solid #ddd;
@@ -37,6 +45,7 @@
 }
 
 .select-box--arrow {
+  border: 2px solid orange;
   width: 30px;
   height: 30px;
   margin: 0;
@@ -53,7 +62,6 @@
   background-repeat: no-repeat;
   background-position: 2px 8 px;
 }
-
 
 .select-box--arrow-down {
   position: absolute;

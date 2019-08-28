@@ -1,0 +1,33 @@
+@media only screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .App {
+    text-align: center;
+  }
+
+  .commentTitle {
+      border: 2px solid pink; 
+    margin-top: 50px;
+  }
+ 
+
+  .commentsList li {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    background-color: rgb(157, 168, 140);
+    align-items: center;
+    margin-top: 75px;
+    /* margin: 20px auto 0; */
+    width: 100%;
+    height: 5;
+    color: black;
+    padding: 0px;
+    border: 2px solid red;
+    text-decoration: none;
+  }
+}

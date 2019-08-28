@@ -3,6 +3,7 @@ import { getData } from './Api';
 import { Link, Router } from '@reach/router';
 import Article from './Article';
 import SortButtons from './SortButtons';
+import './ArticlesList.css';
 
 class ArticlesList extends Component {
   state = {
@@ -17,19 +18,42 @@ class ArticlesList extends Component {
     if (articles) {
       return (
         <div>
+          <div>
+            <h1 className="articlesTitle">Articles</h1>
           <SortButtons fetchArticles={this.fetchArticles} />
-          <title>Articles</title>
-          {articles.map(article => (
-            <Link
-              to={`/articles/${article.article_id}`}
-              key={article.article_id}
-            >
-              <li>{article.title} </li>
-            </Link>
-          ))}
-          <Router>
-            <Article path="/:article_id" />
-          </Router>
+            <ol className="articlesList">
+              {articles.map(article => (
+                <li key={article.article_id} className="articlesList">
+                  <Link to={`/articles/${article.article_id}`}>
+                    <h2 className="articleTitle">
+                      <em>{article.title} </em>
+                    </h2>
+                  </Link>
+                  <div className="topHalf">
+                    <p className="articleVotes">Votes: {article.votes}</p>
+                    <Link to={`/articles/${article.article_id}/comments`}>
+                      <p className="articleComments">
+                        Comments: {article.comment_count}
+                      </p>
+                    </Link>
+                  </div>
+                  <h3>
+                    <p className="articleTopic">Topic: {article.topic}</p>
+                  </h3>
+                  <img
+                    className="foodImg"
+                    src={`/img/${article.topic}.jpg`}
+                    alt="{article.topic}"
+                  />
+                  <p className="articleAuthor">Author: {article.author}</p>
+                  <p className="articleDate">Date: {article.created_at}</p>
+                </li>
+              ))}
+              <Router>
+                <Article path="/:article_id" />
+              </Router>
+            </ol>
+          </div>
         </div>
       );
     }
@@ -42,10 +66,9 @@ class ArticlesList extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     if (prevProps.uri !== this.props.uri) this.fetchArticles();
   };
-  fetchArticles = (sort) => {
-    console.log(sort)
+  fetchArticles = sort => {
     const { topic_slug } = this.props;
-    getData(topic_slug).then(articles => {
+    getData(topic_slug, sort).then(articles => {
       this.setState({ articles, isLoading: false });
     });
   };

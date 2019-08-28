@@ -1,0 +1,95 @@
+@media only screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .App {
+    text-align: center;
+  }
+  body {
+    background-color: blanchedalmond;
+  }
+  .title {
+    /* margin-top: 20px; */
+    color: white;
+  }
+  .n {
+    color: red;
+  }
+
+  .articleTitle {
+    padding: 20px;
+  }
+
+  #deleteButton {
+    width: 30%;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+  #deleteButton:hover {
+    background-color: sandybrown;
+  }
+
+  #postCommentButton {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 30%;
+    padding: 5px;
+  }
+  #postButton:hover {
+    background-color: sandybrown;
+  }
+
+  .articleTop {
+    display: flex;
+  }
+  .article {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid pink; */
+    margin-top: 150px;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
+    background-color: rgb(157, 168, 140);
+  }
+  .articleBody {
+    margin-bottom: 20px;
+  }
+
+  .upArrow img {
+    /* background-image: url('/src/up-arrow.jpg'); */
+    height: 30px;
+    width: 30px;
+  }
+
+  .downArrow img {
+    /* background-image: url('/src/down-arrow.jpg'); */
+    height: 30px;
+    width: 30px;
+  }
+
+  .foodImg {
+    height: 250px;
+    width: 200px;
+  }
+  .articleBottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 4px solid orange;
+    /* grid-template-rows: 1fr 1fr; */
+  }
+  .author {
+    font-weight: bold;
+  }
+  .date {
+    font-weight: bold;
+  }
+  .votes {
+    font-weight: bold;
+  }
+}

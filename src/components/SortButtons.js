@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getData } from './Api';
 
 class SortButtons extends Component {
   state = {
@@ -10,13 +9,15 @@ class SortButtons extends Component {
     const { buttons, sort_by } = this.state;
     return (
       <div>
+        <h2>Sort by:</h2>
         {sort_by.map((sort, i) => (
           <button
+            key={sort}
             className="sort"
-            onCLick={this.props.fetchArticles(sort)}
+            onClick={() => this.props.fetchArticles(sort)}
             value={sort}
           >
-                {`${buttons[i]}`}
+            {`${buttons[i]}`}
           </button>
         ))}
       </div>

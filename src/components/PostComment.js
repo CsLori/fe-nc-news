@@ -10,10 +10,10 @@ class PostComment extends Component {
     const { name, comment } = this.state;
 
     return (
-      <div>
+      <div className="sortSomeStuff">
         <form className="addComment" onSubmit={this.handleSubmit}>
           <label>
-            Name <br/>
+            <h4>Name</h4>
             <input
               type="text"
               name="name"
@@ -22,8 +22,9 @@ class PostComment extends Component {
             />
           </label>
           <br />
+          <br />
           <label>
-            Comment <br/>
+            <h4>Comment</h4>
             <textarea
               type="text"
               required
@@ -33,8 +34,11 @@ class PostComment extends Component {
               maxLength="250"
               onChange={this.handleChange}
             />
-          </label> <br/>
-          <button id="postCommentButton" type="submit">Submit</button>
+          </label>
+          <br />
+          <button id="postCommentButton" type="submit">
+            Send
+          </button>
         </form>
       </div>
     );

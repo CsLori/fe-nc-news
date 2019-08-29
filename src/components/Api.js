@@ -50,6 +50,21 @@ export const deleteArticle = article_id => {
 };
 
 export const voteArticle = (article_id, voteChange) => {
+  console.log(voteChange);
   const URL = `https://loris-nc-news.herokuapp.com/api/articles/${article_id}`;
-  return axios.patch(URL, voteChange);
+  return axios
+    .patch(URL, { inc_vote: voteChange })
+    .then(({ data: { article } }) => {
+      return article;
+    });
+};
+
+export const voteCommentById = (comment_id, voteCommentChange) => {
+  console.log(comment_id);
+  const URL = `https://loris-nc-news.herokuapp.com/api/comments/${comment_id}`;
+  return axios
+    .patch(URL, { inc_vote: voteCommentChange })
+    .then(({ data: { comment } }) => {
+      return comment;
+    });
 };

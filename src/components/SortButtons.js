@@ -10,16 +10,24 @@ class SortButtons extends Component {
     return (
       <div>
         <h2>Sort by:</h2>
-        {sort_by.map((sort, i) => (
-          <button
-            key={sort}
-            className="sort"
-            onClick={() => this.props.fetchArticles(sort)}
-            value={sort}
-          >
-            {`${buttons[i]}`}
-          </button>
-        ))}
+        <form >
+          <div>
+            {sort_by.map((sort, i) => (
+              <>
+                <input
+                  type="radio"
+                  key={sort}
+                  id={sort}
+                  className="sort"
+                  name="sort"
+                  onClick={() => this.props.fetchArticles(sort)}
+                  value={sort}
+                ></input>
+                <label  htmlFor={sort}>{buttons[i]}</label>
+              </>
+            ))}
+          </div>
+        </form>
       </div>
     );
   }

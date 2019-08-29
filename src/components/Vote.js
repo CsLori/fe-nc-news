@@ -6,9 +6,9 @@ class Vote extends Component {
   render() {
     const { voteDifference } = this.state;
     const { votes } = this.props;
-    console.log(votes);
     return (
       <>
+      <div className="voteButton">
         <button
           className="upArrow"
           onClick={() => this.updateVote(1)}
@@ -22,8 +22,10 @@ class Vote extends Component {
           onClick={() => this.updateVote(-1)}
           disabled={voteDifference === -1 || votes + voteDifference === 0}
         >
+          {/* <img src={'/img/redcross.jpg'} alt="down-arrow" /> */}
           <img src={'/img/down-arrow.jpg'} alt="down-arrow" />
         </button>
+        </div>
       </>
     );
   }

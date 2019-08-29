@@ -23,7 +23,7 @@ class App extends Component {
           <Topics path="/topics/" />
           <ArticlesList path="/topics/:topic_slug/articles" />
           <ArticlesList path="/articles" />
-          <Article path="/articles/:article_id" isLoggedIn={isLoggedIn}/>
+          <Article path="/articles/:article_id/*" isLoggedIn={isLoggedIn}/>
           <Comments path="/articles/:article_id/comments" isLoggedIn={isLoggedIn}/>
         </Router>
       </div>

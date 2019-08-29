@@ -9,7 +9,7 @@ class SelectBox extends Component {
   render() {
     const { topics } = this.state;
     return (
-      <select onChange={this.handleChange}>
+      <select className="dropDown" placeholder="Select topic" onChange={this.handleChange}>
         {topics.map(topic => (
           <option key={topic} value={topic}>
             {topic}

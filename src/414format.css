@@ -1,4 +1,4 @@
-  * {
+* {
     margin: 10;
     padding: 0;
   }
@@ -8,9 +8,7 @@
   }
 
   body {
-    width: 100%;
     background-color: blanchedalmond;
-    /* background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); */
   }
 
   .title {
@@ -27,30 +25,21 @@
   header {
     display: inline-block;
     background-color: black;
-    height: 30%;
     width: 100%;
     border: 2px solid red;
   }
 
   .comments {
-    display: flex;
-
     float: right;
   }
   .votes {
-    display: flex;
-
-    /* align-self: center; */
-    float: right;
+    float: left;
   }
   .author {
-    display: flex;
     float: left;
   }
   .date {
-    display: flex;
-
-    float: right;
+    float: left;
   }
   .searchbar {
     float: right;
@@ -59,25 +48,36 @@
     border: 2px solid blue;
   }
   .articleBottom {
-    display: flex;
-    align-items: center;
-
     border: 3px solid red;
     width: 100%;
-    text-align: center;
+    display: inline-block;
   }
-  .articlesList {
-    display: inline;
-    margin: 10px;
-    padding: 0;
+  .articlesList li {
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 5px 5px 15px 5px #000000;
+
+    background-color: lightgray;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'articleTitle'
+      'articleAuthor';
+    margin: 20px auto 0;
+    width: 70%;
+    height: 5;
+    color: black;
+    padding: 0px;
+
+   
+    text-decoration: none;
   }
   .article {
-    display: flex;
-    align-items: center;
-    /* padding-top: 200px; */
+    display: inline-block;
     height: 50%;
     width: 100%;
+    align-items: center;
     -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
     box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
     background-color: rgb(157, 168, 140);
   }
+} */

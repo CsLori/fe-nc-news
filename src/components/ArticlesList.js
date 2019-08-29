@@ -4,6 +4,7 @@ import { Link, Router } from '@reach/router';
 import Article from './Article';
 import SortButtons from './SortButtons';
 import './ArticlesList.css';
+import Error from './Error';
 
 class ArticlesList extends Component {
   state = {
@@ -14,17 +15,20 @@ class ArticlesList extends Component {
   render() {
     const { articles, isLoading, error } = this.state;
     if (isLoading) return <p>Loading....</p>;
-    if (error) return <p>Ooops...</p>;
+    if (error) return <Error error={error} />;
     if (articles) {
       return (
         <div>
-          <div>
+          <div className="fullArticles">
             <h1 className="articlesTitle">Articles</h1>
-          <SortButtons fetchArticles={this.fetchArticles} />
+            <SortButtons fetchArticles={this.fetchArticles} />
             <ol className="articlesList">
               {articles.map(article => (
                 <li key={article.article_id} className="articlesList">
                   <Link to={`/articles/${article.article_id}`}>
+                    <h3>
+                      <p className="articleTopic">{article.topic}</p>
+                    </h3>
                     <h2 className="articleTitle">
                       <em>{article.title} </em>
                     </h2>
@@ -37,9 +41,6 @@ class ArticlesList extends Component {
                       </p>
                     </Link>
                   </div>
-                  <h3>
-                    <p className="articleTopic">Topic: {article.topic}</p>
-                  </h3>
                   <img
                     className="foodImg"
                     src={`/img/${article.topic}.jpg`}
@@ -68,9 +69,20 @@ class ArticlesList extends Component {
   };
   fetchArticles = sort => {
     const { topic_slug } = this.props;
-    getData(topic_slug, sort).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    getData(topic_slug, sort)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(error => {
+        console.dir(error)
+        const {
+          response: {
+            status,
+            data: { msg }
+          }
+        } = error;
+        this.setState({ error: { msg, status }, isLoading: false });
+      });
   };
 }
 

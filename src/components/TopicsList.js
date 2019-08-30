@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getTopics } from './Api';
 import { Link } from '@reach/router';
 import Error from './Error';
+import './Topics.css'
 
 export default class Topics extends Component {
   state = {
@@ -16,12 +17,17 @@ export default class Topics extends Component {
     if (topics) {
       return (
         <>
-          <div>
-            <h1>Topics</h1>
-            <ol className="topics">
+          <div className="topics">
+            <h1 className="topicsTitle">Go to Topics</h1>
+            <ol className="topicsList">
               {topics.map(topic => (
                 <Link to={`/topics/${topic.slug}/articles`} key={topic.slug}>
-                  <li>{topic.slug}</li>
+                  <li><p>{topic.slug}</p></li>
+                  <img
+                    className="foodImg"
+                    src={`/img/${topic.slug}.jpg`}
+                    alt="{article.topic}"
+                  />
                 </Link>
               ))}
             </ol>

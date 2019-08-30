@@ -25,6 +25,10 @@
   flex-direction: column;
   margin-top: 125px;
 }
+.fullArticle a  {
+  text-decoration: none;
+  text-transform: uppercase;
+}
 .articleTop {
   display: flex;
   flex-direction: column;
@@ -64,7 +68,6 @@
 }
 #postCommentButton {
   border: 2px solid orange;
-
 }
 .upArrow img {
   height: 20px;

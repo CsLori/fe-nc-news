@@ -10,7 +10,18 @@ body {
 }
 .sort {
   display: inline-flex;
+}
+button {
+  border: 5px solid black;
+  border-radius: .75em;
+  padding: .7em 1.25em;
+  margin: 1em .5em 0;
+  font-size: 1em;
+  font-weight: bold;
+}
 
+button:hover {
+  background-color: yellow;
 }
 .title {
   color: white;
@@ -18,8 +29,8 @@ body {
 .n {
   color: red;
 }
-.voteButton{
-   display: flex;
+.voteButton {
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -31,7 +42,7 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  column-count: 2;
+  /* column-count: 2; */
   position: fixed;
   top: 0;
   left: 0;
@@ -44,7 +55,7 @@ body {
 .headerTop {
   display: flex;
   flex-direction: column;
-  column-count: 2;
+  /* column-count: 2; */
 }
 .loggedIn {
   color: white;
@@ -61,7 +72,9 @@ body {
     align-items: center;
     width: 50%;
   }
-
+  header {
+    padding: 20px;
+  }
   /*body {
     background-color: blanchedalmond;
   }

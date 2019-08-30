@@ -26,13 +26,14 @@ class ArticlesList extends Component {
               {articles.map(article => (
                 <li key={article.article_id} className="articlesList">
                   <Link to={`/articles/${article.article_id}`}>
-                    <h3>
-                      <p className="articleTopic">{article.topic}</p>
-                    </h3>
                     <h2 className="articleTitle">
                       <em>{article.title} </em>
                     </h2>
+                    <h3>
+                      <p className="articleTopic">{article.topic}</p>
+                    </h3>
                   </Link>
+                  <br />
                   <div className="topHalf">
                     <p className="articleVotes">Votes: {article.votes}</p>
                     <Link to={`/articles/${article.article_id}/comments`}>
@@ -74,7 +75,7 @@ class ArticlesList extends Component {
         this.setState({ articles, isLoading: false });
       })
       .catch(error => {
-        console.dir(error)
+        console.dir(error);
         const {
           response: {
             status,

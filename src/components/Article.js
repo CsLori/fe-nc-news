@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getSingleArticle } from './Api';
 import { Link } from '@reach/router';
-import ArticleHeader from './ArticleHeader';
 import PostComment from './PostComment';
 import { deleteArticle } from './Api';
 import Vote from './Vote';

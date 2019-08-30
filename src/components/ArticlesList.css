@@ -14,7 +14,6 @@
   color: black;
   padding: 10px;
   border: 2px solid red;
-  text-decoration: none;
 }
 p {
   font-weight: bold;
@@ -30,6 +29,12 @@ p {
 .fullArticles {
   display: flex;
   flex-direction: column;
+}
+.fullArticles a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 .articleTopic {
   display: flex;

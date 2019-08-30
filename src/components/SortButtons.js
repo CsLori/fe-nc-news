@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 class SortButtons extends Component {
   state = {
     sort_by: ['created_at', 'votes', 'comment_count'],
-    buttons: ['Date', 'Likes', 'Comments']
+    buttons: ['Date', 'Votes', 'Comments']
   };
   render() {
     const { buttons, sort_by } = this.state;
     return (
       <div>
         <h2>Sort by:</h2>
-        <form >
+        <form>
           <div>
             {sort_by.map((sort, i) => (
               <>
@@ -23,7 +23,7 @@ class SortButtons extends Component {
                   onClick={() => this.props.fetchArticles(sort)}
                   value={sort}
                 ></input>
-                <label  htmlFor={sort}>{buttons[i]}</label>
+                <label htmlFor={sort}>{buttons[i]}</label>
               </>
             ))}
           </div>

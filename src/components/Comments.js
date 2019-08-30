@@ -22,7 +22,10 @@ export class Comments extends Component {
                 <li key={comment.comment_id}>
                   <div className="commentTop">
                     <p>Author: {comment.author}</p> <br />
-                    <p>Date: {comment.created_at}</p> <br />
+                    <p>
+                      Date: {new Date(comment.created_at).toLocaleString()}
+                    </p>{' '}
+                    <br />
                   </div>
                   <em>{comment.body}</em> <br />
                   <br />

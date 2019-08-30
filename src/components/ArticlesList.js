@@ -48,7 +48,9 @@ class ArticlesList extends Component {
                     alt="{article.topic}"
                   />
                   <p className="articleAuthor">Author: {article.author}</p>
-                  <p className="articleDate">Date: {article.created_at}</p>
+                  <p className="articleDate">
+                    Date: {new Date(article.created_at).toLocaleString()}
+                  </p>
                 </li>
               ))}
               <Router>

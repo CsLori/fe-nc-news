@@ -46,9 +46,12 @@ class Article extends Component {
             </div>
             <div className="articleBottom">
               <p className="author">Author: {article.username}</p> <br />
-              <p className="date">Date: {article.created_at}</p> <br />
+              <p className="date">
+                Date: {new Date(article.created_at).toLocaleString()}
+              </p>{' '}
+              <br />
             </div>
-            <div>
+            <div className="articleCommentSection">
               <Vote article_id={article.article_id} votes={article.votes} />{' '}
               <br /> <br />
               <Comments article_id={`${article.article_id}`} />

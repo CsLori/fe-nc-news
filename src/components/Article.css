@@ -1,3 +1,6 @@
+body {
+  background-color: blanchedalmond;
+}
 .articleTitle {
   padding-bottom: 20px;
 }
@@ -25,7 +28,7 @@
   flex-direction: column;
   margin-top: 125px;
 }
-.fullArticle a  {
+.fullArticle a {
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -47,8 +50,25 @@
   box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
   background-color: rgb(157, 168, 140);
 }
+.article em {
+  /* border: 2px double orange; */
+  width: 90%;
+
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  word-spacing: -0.2px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+}
 .articleBody {
   margin-bottom: 20px;
+}
+.articleCommentSection {
+  background-color: blanchedalmond;
 }
 .voteArticle {
   border: 2px solid orange;

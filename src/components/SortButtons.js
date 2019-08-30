@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SortButtons(fetchArticles) {
+function SortButtons({fetchArticles}) {
   const sort_by = ['created_at', 'votes', 'comment_count'];
   const buttons = ['Date', 'Likes', 'Comments'];
 

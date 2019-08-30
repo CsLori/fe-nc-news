@@ -65,14 +65,14 @@ button:hover {
   margin-top: 10px;
 }
 
-/* @media only screen and (min-width: 769px) {
+@media only screen and (min-width: 769px) {
   .dropDown {
     align-items: center;
-    width: 50%;
+    width: 20%;
   }
   header {
-    padding: 20px;
-  } */
+    height: 10%;
+  }
   /*body {
     background-color: blanchedalmond;
   }
@@ -111,24 +111,24 @@ button:hover {
     color: black;
     padding: 0px;
   } */
-/* } */
-/* border: 2px solid red;
+  /* } */
+  /* border: 2px solid red;
     background-color: white; */
-/* text-decoration: none;
+  /* text-decoration: none;
   } */
 
-/* .votes {
+  /* .votes {
     grid-area: comments;
   } */
 
-/* .foodImg {
+  .foodImg {
     height: 250px;
     width: 200px;
-  } */
-/* .articleAuthor {
+  }
+  /* .articleAuthor {
 
   } */
-/* .articleBottom {
+  /* .articleBottom {
     display: grid;
     border: 4px solid orange;
     grid-template-columns: 1fr 1fr;
@@ -151,7 +151,7 @@ button:hover {
     grid-area: comments;
   }*/
 
-/* @media only screen and (min-width: 769px) {
+  /* @media only screen and (min-width: 769px) {
   * {
     margin: 0;
     padding: 0;
@@ -203,3 +203,4 @@ button:hover {
     margin-top: 10px;
   }
 } */
+}

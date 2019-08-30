@@ -101,9 +101,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.commentLabel textarea {
-  /* border: 2px solid red; */
-}
+
 #postCommentButton {
   width: 125px;
 }
@@ -112,32 +110,24 @@ body {
   width: 20px;
 }
 .downArrow img {
-  text-align: justify;
-  text-align: justify;
-  text-align: justify;
-
-  text-align: justify;
   height: 20px;
-  text-align: justify;
-
   width: 20px;
 }
 .upArrow img:disabled {
   background-image: url('/public/img/redcross.jpg');
+  background-size: cover;
+
   height: 20px;
   width: 20px;
 }
 
 .downArrow img:disabled {
   background-image: url('/public/img/redcross.jpg');
+  background-size: cover;
   height: 20px;
   width: 20px;
 }
 
-.foodImg {
-  height: 250px;
-  width: 200px;
-}
 .articleBottom {
   display: flex;
   flex-direction: column;
@@ -166,10 +156,10 @@ body {
 .votes {
   font-weight: bold;
 }
-button:disabled,
+/* button:disabled,
 button[disabled='disabled'] {
   background-image: url('/public/img/redcross.jpg');
-}
+} */
 
 @media only screen and (min-width: 769px) {
   .articleTitle {
@@ -203,20 +193,17 @@ button[disabled='disabled'] {
     width: 20px;
   }
   .upArrow img:disabled {
-    background-image: url('/public/img/redcross.jpg');
+    background-image: url('/img/redcross.jpg');
     height: 20px;
     width: 20px;
   }
 
   .downArrow img:disabled {
-    background-image: url('/public/img/redcross.jpg');
+    background-image: url('/img/redcross.jpg');
     height: 20px;
     width: 20px;
   }
-  .foodImg {
-    height: 480px;
-    width: 720px;
-  }
+
   .articleBottom {
     display: flex;
     flex-direction: column;

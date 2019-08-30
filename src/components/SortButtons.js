@@ -10,10 +10,11 @@ class SortButtons extends Component {
     return (
       <div>
         <h2>Sort by:</h2>
-        <form>
+        <form >
           <div>
             {sort_by.map((sort, i) => (
-              <>
+              
+              <div key={sort}>
                 <input
                   type="radio"
                   key={sort}
@@ -23,8 +24,8 @@ class SortButtons extends Component {
                   onClick={() => this.props.fetchArticles(sort)}
                   value={sort}
                 ></input>
-                <label htmlFor={sort}>{buttons[i]}</label>
-              </>
+                <label  htmlFor={sort}>{buttons[i]}</label>
+                </div>
             ))}
           </div>
         </form>

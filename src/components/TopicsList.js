@@ -3,6 +3,7 @@ import { getTopics } from './Api';
 import { Link } from '@reach/router';
 import Error from './Error';
 import './Topics.css';
+import Loading from './Loading';
 
 export default class Topics extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class Topics extends Component {
   };
   render() {
     const { error, isLoading, topics } = this.state;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loading />;
     if (error) return <Error error={error} />;
     if (topics) {
       return (
@@ -26,7 +27,6 @@ export default class Topics extends Component {
                     <li>
                       <p>{topic.slug}</p>
                     </li>
-                    
                   </Link>
                 </div>
               ))}

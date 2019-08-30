@@ -184,7 +184,7 @@ button:hover {
     height: 11%;
     background-color: black;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   .headerTop {
     display: flex;
@@ -195,7 +195,7 @@ button:hover {
     color: white;
   }
   .selectBox {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     width: 100%;

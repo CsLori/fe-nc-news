@@ -81,13 +81,13 @@ body {
   text-align: justify;
 }
 .addComment {
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .commentLabel textarea {
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 #postCommentButton {
   width: 125px;
@@ -134,7 +134,7 @@ body {
 }
 
 .authorAndDate {
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   display: flex;
   flex-direction: row;
   width: 90%;

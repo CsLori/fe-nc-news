@@ -5,6 +5,7 @@ import Article from './Article';
 import SortButtons from './SortButtons';
 import './ArticlesList.css';
 import Error from './Error';
+import Loading from './Loading';
 
 class ArticlesList extends Component {
   state = {
@@ -14,7 +15,7 @@ class ArticlesList extends Component {
   };
   render() {
     const { articles, isLoading, error } = this.state;
-    if (isLoading) return <p>Loading....</p>;
+    if (isLoading) return <Loading/>
     if (error) return <Error error={error} />;
     if (articles) {
       return (

@@ -3,13 +3,14 @@ import { getComments } from './Api';
 import { deleteComment } from './Api';
 import './Comments.css';
 import { VoteComment } from './VoteComment';
+import Loading from './Loading';
 
 export class Comments extends Component {
   state = { comments: '', isLoading: true, error: null };
   render() {
     const { isLoggedIn } = this.props;
     const { isLoading, error, comments } = this.state;
-    if (isLoading) return <p>Loading....</p>;
+    if (isLoading) return <Loading/>;
     if (error) return <p>Ooops...</p>;
     if (comments) {
       return (

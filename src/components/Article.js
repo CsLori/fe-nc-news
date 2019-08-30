@@ -7,6 +7,7 @@ import Vote from './Vote';
 import './Article.css';
 import { Comments } from './Comments';
 import Error from './Error';
+import Loading from './Loading';
 
 class Article extends Component {
   state = {
@@ -17,7 +18,7 @@ class Article extends Component {
   render() {
     const { isLoading, article, error } = this.state;
     const { isLoggedIn } = this.props;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <Loading />;
     if (error) return <Error error={error} />;
     return (
       <>
@@ -46,11 +47,11 @@ class Article extends Component {
             </div>
             <div className="articleBottom">
               <div className="authorAndDate">
-              <p className="author">Author: {article.username}</p> 
-              <p className="date">
-                Date: {new Date(article.created_at).toLocaleString()}
-              </p>
-                </div>
+                <p className="author">Author: {article.username}</p>
+                <p className="date">
+                  Date: {new Date(article.created_at).toLocaleString()}
+                </p>
+              </div>
               <Vote article_id={article.article_id} votes={article.votes} />
               <br />
             </div>

@@ -125,6 +125,8 @@ body {
 }
 .articleBottom {
   display: flex;
+  flex-direction: column;
+
   width: 100%;
   /* border: 6px double orange; */
   justify-content: center;
@@ -161,18 +163,18 @@ button[disabled='disabled'] {
   .articleBody {
     margin-bottom: 30px;
   }
-  /* .fullArticle {
+  .fullArticle {
     display: flex;
     flex-direction: column;
-  } */
+  }
   .article {
     border: 6px double orange;
 
     align-items: center;
     justify-content: center;
     margin: 150px auto;
-    /* margin-left: 230px; */
-    /* height: 30%; */
+    margin: auto;
+    height: 30%;
     width: 70%;
 
     text-decoration: none;

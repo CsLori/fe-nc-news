@@ -65,14 +65,14 @@ button:hover {
   margin-top: 10px;
 }
 
-@media only screen and (min-width: 769px) {
+/* @media only screen and (min-width: 769px) {
   .dropDown {
     align-items: center;
     width: 50%;
   }
   header {
     padding: 20px;
-  }
+  } */
   /*body {
     background-color: blanchedalmond;
   }
@@ -111,7 +111,7 @@ button:hover {
     color: black;
     padding: 0px;
   } */
-}
+/* } */
 /* border: 2px solid red;
     background-color: white; */
 /* text-decoration: none;
@@ -151,7 +151,7 @@ button:hover {
     grid-area: comments;
   }*/
 
-@media only screen and (min-width: 769px) {
+/* @media only screen and (min-width: 769px) {
   * {
     margin: 0;
     padding: 0;
@@ -184,7 +184,6 @@ button:hover {
     height: 11%;
     background-color: black;
     width: 100%;
-    /* border: 2px solid red; */
   }
   .headerTop {
     display: flex;
@@ -195,7 +194,6 @@ button:hover {
     color: white;
   }
   .selectBox {
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -204,4 +202,4 @@ button:hover {
   .sort {
     margin-top: 10px;
   }
-}
+} */

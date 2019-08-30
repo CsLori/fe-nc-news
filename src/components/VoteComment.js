@@ -8,6 +8,7 @@ export class VoteComment extends Component {
     const { votes } = this.props;
     return (
       <>
+      <div className="voteOnComments">
         <button
           className="upArrow"
           onClick={() => this.updateCommentVote(1)}
@@ -24,6 +25,7 @@ export class VoteComment extends Component {
           {/* <img src={'/img/redcross.jpg'} alt="down-arrow" /> */}
           <img src={'/img/down-arrow.jpg'} alt="down-arrow" />
         </button>
+        </div>
       </>
     );
   }

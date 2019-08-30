@@ -9,7 +9,6 @@ export class Comments extends Component {
   render() {
     const { isLoggedIn } = this.props;
     const { isLoading, error, comments } = this.state;
-    // const { isLoggedIn } = this.props;
     if (isLoading) return <p>Loading....</p>;
     if (error) return <p>Ooops...</p>;
     if (comments) {
@@ -21,15 +20,13 @@ export class Comments extends Component {
               {comments.map(comment => (
                 <li key={comment.comment_id}>
                   <div className="commentTop">
-                    <p>Author: {comment.author}</p> <br />
-                    <p>
-                      Date: {new Date(comment.created_at).toLocaleString()}
-                    </p>{' '}
-                    <br />
+                    <p>{comment.author}</p>
+                    <p>{new Date(comment.created_at).toLocaleString()}</p>
                   </div>
-                  <em>{comment.body}</em> <br />
+                  <p className="commentsCommentBody">{comment.body}</p> <br />
                   <br />
                   <VoteComment
+                    className="voteButtons"
                     comment_id={comment.comment_id}
                     votes={comment.votes}
                   />

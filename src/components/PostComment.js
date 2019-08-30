@@ -23,7 +23,7 @@ class PostComment extends Component {
           </label>
           <br />
           <br />
-          <label>
+          <label className="commentLabel">
             <h4>Comment</h4>
             <textarea
               type="text"

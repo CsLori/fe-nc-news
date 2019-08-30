@@ -15,16 +15,12 @@
 
 .topicsTitle {
   display: flex;
-
-  /* margin: 100px 100px;
-  padding: 150px; */
 }
 
 .topicsList li {
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  border: 2px solid red;
   margin: 100px;
   padding: 30px;
   -webkit-box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
@@ -60,9 +56,10 @@
   height: 100px;
 }
 .topics p {
-  /* border: 2px solid orange; */
   background-color: black;
-  
+  margin: auto;
+  align-self: center;
+  text-align: center;
 }
 
 .coding {

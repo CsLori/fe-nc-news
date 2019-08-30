@@ -4,8 +4,13 @@ body {
 .commentTop {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-style: bold;
+  width: 90%;
+  border: 2px solid red;
 }
+
 .commentTitle {
   display: flex;
   flex-direction: column;
@@ -16,14 +21,26 @@ body {
   margin-top: 150px;
 }
 
+.voteOnComments {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .commentsList {
   display: flex;
-  margin-top: 10px;
+  margin: 10px auto;
+
   /* justify-content: center;
   align-content: center;
   align-items: center;
   text-align: justify; */
 }
+.commentsCommentBody {
+  width: 90%;
+  font-style: italic;
+}
+
 .commentsList li {
   border: 6px double orange;
   display: flex;
@@ -36,7 +53,7 @@ body {
   box-shadow: 11px -6px 24px 8px rgba(0, 0, 0, 0.75);
   background-color: rgb(157, 168, 140);
   margin: 50px auto;
-  width: 100%;
+  width: 90%;
   height: 5;
   color: black;
   padding: 0px;

@@ -45,18 +45,19 @@ class Article extends Component {
               <PostComment article_id={this.props.article_id} />
             </div>
             <div className="articleBottom">
-              <p className="author">Author: {article.username}</p> <br />
+              <div className="authorAndDate">
+              <p className="author">Author: {article.username}</p> 
               <p className="date">
                 Date: {new Date(article.created_at).toLocaleString()}
-              </p>{' '}
+              </p>
+                </div>
+              <Vote article_id={article.article_id} votes={article.votes} />
               <br />
             </div>
-            <div className="articleCommentSection">
-              <Vote article_id={article.article_id} votes={article.votes} />{' '}
-              <br /> <br />
-              <Comments article_id={`${article.article_id}`} />
-            </div>
           </div>
+        </div>
+        <div className="articleCommentSection">
+          <Comments article_id={`${article.article_id}`} />
         </div>
       </>
     );

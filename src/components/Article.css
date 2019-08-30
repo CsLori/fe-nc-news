@@ -5,6 +5,12 @@ body {
   padding-bottom: 20px;
   width: 90%;
 }
+.sortSomeStuff form {
+  width: 350px;
+}
+.sortSomeStuff textarea {
+  width: 90%;
+}
 
 #deleteButton {
   width: 30%;
@@ -34,8 +40,17 @@ body {
   text-transform: uppercase;
 }
 .articleTop {
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+  padding: 0px;
+}
+.articleTop a {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35px;
 }
 
 .article {

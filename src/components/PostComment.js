@@ -11,7 +11,7 @@ class PostComment extends Component {
 
     return (
       <div className="sortSomeStuff">
-        <form className="addComment" onSubmit={this.handleSubmit}>
+        <form  onSubmit={this.handleSubmit}>
           <label>
             <h4>Name</h4>
             <input
@@ -29,7 +29,8 @@ class PostComment extends Component {
               type="text"
               required
               name="comment"
-              rows="4"
+              rows="6"
+              columns="30"
               value={comment}
               maxLength="250"
               onChange={this.handleChange}

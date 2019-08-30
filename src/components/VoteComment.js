@@ -8,23 +8,23 @@ export class VoteComment extends Component {
     const { votes } = this.props;
     return (
       <>
-      <div className="voteOnComments">
-        <button
-          className="upArrow"
-          onClick={() => this.updateCommentVote(1)}
-          disabled={voteDifference === 1}
-        >
-          <img src={'/img/up-arrow.jpg'} alt="up-arrow" />
-        </button>
-        <p className="votes">Votes:{votes + voteDifference}</p>
-        <button
-          className="downArrow"
-          onClick={() => this.updateCommentVote(-1)}
-          disabled={voteDifference === -1 || votes + voteDifference === 0}
-        >
-          {/* <img src={'/img/redcross.jpg'} alt="down-arrow" /> */}
-          <img src={'/img/down-arrow.jpg'} alt="down-arrow" />
-        </button>
+        <div className="voteOnComments">
+          <button
+            className="upArrow"
+            onClick={() => this.updateCommentVote(1)}
+            disabled={voteDifference === 1}
+          >
+            <img src={'/img/up-arrow.jpg'} alt="up-arrow" />
+          </button>
+          <p className="votes">Likes:{votes + voteDifference}</p>
+          <button
+            className="downArrow"
+            onClick={() => this.updateCommentVote(-1)}
+            disabled={voteDifference === -1 || votes + voteDifference === 0}
+          >
+            {/* <img src={'/img/redcross.jpg'} alt="down-arrow" /> */}
+            <img src={'/img/down-arrow.jpg'} alt="down-arrow" />
+          </button>
         </div>
       </>
     );

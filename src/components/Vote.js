@@ -16,7 +16,7 @@ class Vote extends Component {
         >
           <img src={'/img/up-arrow.jpg'} alt="up-arrow" />
         </button>
-        <p className="votes">Votes:{votes + voteDifference}</p>
+        <p className="votes">Likes:{votes + voteDifference}</p>
         <button
           className="downArrow"
           onClick={() => this.updateVote(-1)}

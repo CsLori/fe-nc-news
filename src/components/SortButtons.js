@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SortButtons extends Component {
   state = {
     sort_by: ['created_at', 'votes', 'comment_count'],
-    buttons: ['Date', 'Votes', 'Comments']
+    buttons: ['Date', 'Likes', 'Comments']
   };
   render() {
     const { buttons, sort_by } = this.state;

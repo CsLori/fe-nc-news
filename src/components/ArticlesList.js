@@ -36,7 +36,7 @@ class ArticlesList extends Component {
                   </Link>
                   <br />
                   <div className="topHalf">
-                    <p className="articleVotes">Votes: {article.votes}</p>
+                    <p className="articleVotes">Likes: {article.votes}</p>
                     <Link to={`/articles/${article.article_id}/comments`}>
                       <p className="articleComments">
                         Comments: {article.comment_count}

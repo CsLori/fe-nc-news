@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import ArticlesList from './ArticlesList';
+import React from 'react';
+import Topics from './TopicsList';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        <h1 className="home">Homepage</h1>
-        <ArticlesList path="/articles" />
-      </div>
-    );
-  }
+function Home() {
+  return (
+    <div>
+      <h1 className="home">Homepage</h1>
+      <Topics path="/topics" />
+    </div>
+  );
 }
 
 export default Home;

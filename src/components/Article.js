@@ -42,9 +42,9 @@ class Article extends Component {
                 Delete article
               </button>
             )}
-            <div className="articlePost">
+            {/* <div className="articlePost">
               <PostComment article_id={this.props.article_id} />
-            </div>
+            </div> */}
             <div className="articleBottom">
               <div className="authorAndDate">
                 <p className="author">
@@ -63,6 +63,7 @@ class Article extends Component {
         </div>
         <div className="articleCommentSection">
           <Comments article_id={`${article.article_id}`} />
+
         </div>
       </>
     );

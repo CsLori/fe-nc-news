@@ -4,19 +4,23 @@ import { deleteComment } from './Api';
 import './Comments.css';
 import { VoteComment } from './VoteComment';
 import Loading from './Loading';
+import { insertComment } from './Api';
+import PostComment from './PostComment';
 
 export class Comments extends Component {
   state = { comments: '', isLoading: true, error: null };
   render() {
     const { isLoggedIn } = this.props;
     const { isLoading, error, comments } = this.state;
-    if (isLoading) return <Loading/>;
+    if (isLoading) return <Loading />;
     if (error) return <p>Ooops...</p>;
     if (comments) {
       return (
         <>
           <h1 className="commentTitle">Comment section</h1>
           <div className="commentsList">
+            <PostComment className="postComment" addComment={this.addComment} />
+
             <ol>
               {comments.map(comment => (
                 <li key={comment.comment_id}>
@@ -52,11 +56,19 @@ export class Comments extends Component {
     this.fetchComments();
   };
 
+  addComment = newComment => {
+    const { article_id } = this.props;
+    insertComment(article_id, newComment).then(comment => {
+      this.setState(({ comments }) => {
+        return { comments: [comment, ...comments] };
+      });
+    });
+  };
+
   fetchComments = () => {
     const { article_id } = this.props;
     // console.log(this.props, 'comments');
     getComments(article_id).then(comments => {
-      //   console.log(comments, 'comment');
       this.setState({ comments, isLoading: false });
     });
   };

@@ -11,7 +11,7 @@ class PostComment extends Component {
 
     return (
       <div className="sortSomeStuff">
-        <form  onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <label>
             <h4>Name</h4>
             <input
@@ -52,18 +52,19 @@ class PostComment extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.addComment();
-  };
-
-  addComment = () => {
     const { name: author, comment: body } = this.state;
     const { article_id } = this.props;
-    insertComment(article_id, { author, body });
+    this.props.addComment({ author, body });
     this.setState({
       name: '',
       comment: ''
     });
   };
+
+  // addComment = () => {
+  //   const { name: author, comment: body } = this.state;
+  //   insertComment({ author, body });
+  // };
 }
 
 export default PostComment;

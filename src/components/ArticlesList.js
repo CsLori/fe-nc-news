@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { getData } from './Api';
 import { Link, Router } from '@reach/router';
-import Article from './Article';
+// import Article from './Article';
 import SortButtons from './SortButtons';
 import './ArticlesList.css';
 import Error from './Error';
 import Loading from './Loading';
+import Articlecards from './select-box/Articlecards';
 
 class ArticlesList extends Component {
   state = {
@@ -15,7 +16,7 @@ class ArticlesList extends Component {
   };
   render() {
     const { articles, isLoading, error } = this.state;
-    if (isLoading) return <Loading/>
+    if (isLoading) return <Loading />;
     if (error) return <Error error={error} />;
     if (articles) {
       return (
@@ -23,7 +24,8 @@ class ArticlesList extends Component {
           <div className="fullArticles">
             <h1 className="articlesTitle">Articles</h1>
             <SortButtons fetchArticles={this.fetchArticles} />
-            <ol className="articlesList">
+            <Articlecards articles={articles} />
+            {/* <ol className="articlesList">
               {articles.map(article => (
                 <li key={article.article_id} className="articlesList">
                   <Link to={`/articles/${article.article_id}`}>
@@ -57,7 +59,7 @@ class ArticlesList extends Component {
               <Router>
                 <Article path="/:article_id" />
               </Router>
-            </ol>
+            </ol> */}
           </div>
         </div>
       );

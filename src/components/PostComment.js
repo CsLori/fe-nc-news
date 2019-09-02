@@ -13,7 +13,7 @@ class PostComment extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <h4>Name</h4>
-            <input
+            <input className="nameLabel"
               type="text"
               name="name"
               value={name}

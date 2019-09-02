@@ -9,7 +9,11 @@ body {
   width: 350px;
 }
 .sortSomeStuff textarea {
+  border: 2px solid black;
   width: 90%;
+}
+.nameLabel {
+  border: 2px solid black;
 }
 .commentsList {
   display: flex;
@@ -44,17 +48,24 @@ body {
   text-transform: uppercase;
 }
 .articleTop {
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   padding: 0px;
 }
 .articleTop a {
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 35px;
+}
+.pagination {
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+.pagination button {
+  height: 30%;
+  width: 55%;
 }
 
 .article {

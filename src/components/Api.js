@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-export const getData = (topic_slug, sort) => {
+export const getData = (topic_slug, sort, page) => {
   let URL = 'https://loris-nc-news.herokuapp.com/api/articles';
   return axios
-    .get(URL, { params: { topic: topic_slug, sort_by: sort } })
-    .then(({ data: { articles } }) => {
-      return articles;
+    .get(URL, { params: { topic: topic_slug, sort_by: sort, p: page } })
+    .then(({ data }) => {
+      return data;
     });
 };
 

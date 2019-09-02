@@ -6,7 +6,6 @@ import { VoteComment } from './VoteComment';
 import Loading from './Loading';
 import { insertComment } from './Api';
 import PostComment from './PostComment';
-import { navigate } from '@reach/router';
 
 export class Comments extends Component {
   state = { comments: '', isLoading: true, error: null };

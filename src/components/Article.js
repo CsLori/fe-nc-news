@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { getSingleArticle } from './Api';
 import { Link } from '@reach/router';
-import PostComment from './PostComment';
 import { deleteArticle } from './Api';
 import Vote from './Vote';
 import './Article.css';
@@ -42,9 +41,7 @@ class Article extends Component {
                 Delete article
               </button>
             )}
-            {/* <div className="articlePost">
-              <PostComment article_id={this.props.article_id} />
-            </div> */}
+
             <div className="articleBottom">
               <div className="authorAndDate">
                 <p className="author">
@@ -63,7 +60,6 @@ class Article extends Component {
         </div>
         <div className="articleCommentSection">
           <Comments article_id={`${article.article_id}`} />
-
         </div>
       </>
     );
@@ -72,7 +68,6 @@ class Article extends Component {
     this.fetchArticle();
   };
   fetchArticle = () => {
-    // const { error } = this.state;
     const { article_id } = this.props;
     getSingleArticle(article_id)
       .then(article => {

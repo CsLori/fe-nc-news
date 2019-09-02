@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link, Router } from '@reach/router';
-import Article from '../Article';
+import Article from './Article';
 
 const Articlecards = ({ articles }) => {
-    console.log(articles);
   return (
     <div>
       <ol className="articlesList">

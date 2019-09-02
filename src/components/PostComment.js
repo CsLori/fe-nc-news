@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { insertComment } from './Api';
 
 class PostComment extends Component {
   state = {
@@ -53,18 +52,12 @@ class PostComment extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name: author, comment: body } = this.state;
-    const { article_id } = this.props;
     this.props.addComment({ author, body });
     this.setState({
       name: '',
       comment: ''
     });
   };
-
-  // addComment = () => {
-  //   const { name: author, comment: body } = this.state;
-  //   insertComment({ author, body });
-  // };
 }
 
 export default PostComment;

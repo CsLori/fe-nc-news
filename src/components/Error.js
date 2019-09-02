@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Error = ({error}) => {
-  console.log(error);
+const Error = ({ error }) => {
   return (
     <h1 className="errorMsg">
       Status: {error.status} <br />

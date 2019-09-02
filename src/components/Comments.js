@@ -67,7 +67,6 @@ export class Comments extends Component {
 
   fetchComments = () => {
     const { article_id } = this.props;
-    // console.log(this.props, 'comments');
     getComments(article_id).then(comments => {
       this.setState({ comments, isLoading: false });
     });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SelectBox.css';
+// import './SelectBox.css';
 import { navigate } from '@reach/router';
 
 class SelectBox extends Component {

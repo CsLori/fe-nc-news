@@ -59,7 +59,10 @@ class Article extends Component {
           </div>
         </div>
         <div className="articleCommentSection">
-          <Comments article_id={`${article.article_id}`} />
+          <Comments
+            article_id={`${article.article_id}`}
+            isLoggedIn={isLoggedIn}
+          />
         </div>
       </>
     );

@@ -6,6 +6,7 @@ import { VoteComment } from './VoteComment';
 import Loading from './Loading';
 import { insertComment } from './Api';
 import PostComment from './PostComment';
+import { navigate } from '@reach/router';
 
 export class Comments extends Component {
   state = { comments: '', isLoading: true, error: null };
@@ -72,6 +73,15 @@ export class Comments extends Component {
     });
   };
   removeComment = comment_id => {
-    deleteComment(comment_id);
+    const { article_id } = this.props;
+
+    deleteComment(comment_id, article_id).then(() => {
+      this.setState(prevState => {
+        const result = prevState.comments.filter(
+          comment => comment.comment_id !== comment_id
+        );
+        return { comments: result };
+      });
+    });
   };
 }

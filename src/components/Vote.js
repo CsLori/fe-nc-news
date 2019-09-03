@@ -20,7 +20,7 @@ class Vote extends Component {
           <button
             className="downArrow"
             onClick={() => this.updateVote(-1)}
-            disabled={voteDifference === -1 || votes + voteDifference === 0}
+            disabled={voteDifference === -1}
           >
             <img src={'/img/down-arrow.jpg'} alt="down-arrow" />
           </button>

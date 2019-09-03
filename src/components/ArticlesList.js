@@ -25,11 +25,7 @@ class ArticlesList extends Component {
           <div className="fullArticles">
             <h1 className="articlesTitle">Articles</h1>
             <SortButtons fetchArticles={this.fetchArticles} />
-            <Page
-              page={page}
-              changePage={this.changePage}
-              maxPage={maxPage}
-            />
+            <Page page={page} changePage={this.changePage} maxPage={maxPage} />
             <Articlecards articles={articles} />
           </div>
         </div>
@@ -57,7 +53,6 @@ class ArticlesList extends Component {
     getData(topic_slug, sort, page)
       .then(({ articles, total_count }) => {
         const maxPage = Math.ceil(total_count / 10);
-        console.log(total_count);
         this.setState({ articles, isLoading: false, maxPage });
       })
       .catch(error => {

@@ -1,0 +1,14 @@
+.usersList {
+  margin: 100px auto -80px;
+}
+.selectUsername {
+  margin-bottom: 10px;
+}
+.usersButton {
+  border: 5px solid black;
+  border-radius: 0.75em;
+  padding: 0.4em 1.65em;
+  margin: 0.8em 0.3em 0;
+  font-size: 0.8em;
+  font-weight: bold;
+}

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { getTopics } from './Api';
-import { Link } from '@reach/router';
+// import { Link } from '@reach/router';
 import Error from './Error';
 import './Topics.css';
 import Loading from './Loading';
+import TopicsCards from './TopicsCards';
 
 export default class Topics extends Component {
   state = {
@@ -20,17 +21,7 @@ export default class Topics extends Component {
         <>
           <div className="topics">
             <h1 className="topicsTitle">Go to Topics</h1>
-            <ol className="topicsList">
-              {topics.map(topic => (
-                <div className={topic.slug}>
-                  <Link to={`/topics/${topic.slug}/articles`} key={topic.slug}>
-                    <li>
-                      <p>{topic.slug}</p>
-                    </li>
-                  </Link>
-                </div>
-              ))}
-            </ol>
+            <TopicsCards topics={topics} />
           </div>
         </>
       );

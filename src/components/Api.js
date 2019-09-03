@@ -59,8 +59,15 @@ export const voteArticle = (article_id, voteChange) => {
 export const voteCommentById = (comment_id, voteCommentChange) => {
   const URL = `https://loris-nc-news.herokuapp.com/api/comments/${comment_id}`;
   return axios
-    .patch(URL, { inc_vote: voteCommentChange })
+    .patch(URL, { inc_votes: voteCommentChange })
     .then(({ data: { comment } }) => {
       return comment;
     });
+};
+
+export const getAllUsers = () => {
+  const URL = `https://loris-nc-news.herokuapp.com/api/users`;
+  return axios.get(URL).then(({ data: { users } }) => {
+    return users;
+  });
 };

@@ -46,7 +46,7 @@ class UsersDropdown extends Component {
   handleChange = e => {
     this.setState({ user: e.target.value });
   };
-  handleClick = e => {
+  handleClick = () => {
     const { updateUser } = this.props;
     const { user } = this.state;
     updateUser(user);

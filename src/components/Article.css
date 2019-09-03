@@ -144,7 +144,7 @@ body {
 .articleBottom {
   display: flex;
   flex-direction: column;
-  
+
   width: 100%;
   justify-content: center;
   align-content: center;
@@ -153,7 +153,6 @@ body {
 }
 
 .authorAndDate {
-  border: 2px solid yellow;
   display: flex;
   flex-direction: row;
   width: 90%;
